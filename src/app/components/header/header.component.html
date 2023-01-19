@@ -2,7 +2,7 @@
      <h1 class="logo" routerLink="/">All Angular Projects</h1>
      <span class="toggler" (click)="toggleLinks()"><span class="material-symbols-outlined">menu</span></span>
      <ul class="links" [ngClass]="{'active': toggled}">
-          <li class="link" (click)="closeToggler()"><a routerLink="/notes">Notes</a></li>
+          <li class="link" (click)="closeToggler()" *accType="'admin'"><a routerLink="/notes">Notes</a></li>
           <li class="link" (click)="closeToggler()"><a routerLink="/to-do-list">To Do List</a></li>
           <li class="link" (click)="closeToggler()"><a routerLink="/weather">Weather</a></li>
      </ul>
