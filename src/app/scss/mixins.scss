@@ -1,0 +1,3 @@
+@import "./variables.scss";
+@mixin flex-align($j,$a){justify-content: $j;align-items: $a;}
+@mixin header-link{cursor: pointer;color: $blue-secondary;padding: $btn-padding;border-radius: $btn-radius;transition: .3s ease all;&:hover{background: $blue-secondary;color: white;}}

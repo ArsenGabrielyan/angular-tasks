@@ -1,0 +1,16 @@
+@import "../scss/mixins.scss";
+@media screen and (max-width: 800px){
+     .navbar{
+          position: relative;
+          .toggler{display: block !important;}
+          .links{
+               width: 100%;height: 90vh;
+               text-align: center;display: none !important;
+               flex-direction: column;@include flex-align(center,center);
+               position: absolute;top: 100px;left: 0;width: 100%;
+               background: $light;&.active{display: block !important;}
+               li {padding: 15px;}
+          }
+     }
+}
+@media screen and (max-width: 400px) {.navbar .logo{font-size: 20px !important;}}
