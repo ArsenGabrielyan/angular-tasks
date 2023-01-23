@@ -17,6 +17,6 @@ import { AccTypeDirective } from './directive/acc-type.directive';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

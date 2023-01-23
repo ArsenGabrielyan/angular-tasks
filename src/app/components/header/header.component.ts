@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  toggled = false;
+  toggled = false; account = this.adminService.getRole();
+  constructor(private adminService: AdminService){}
   toggleLinks = () => this.toggled = !this.toggled;
   closeToggler = () => this.toggled = false;
 }
