@@ -9,10 +9,11 @@ import { ToDoItem } from 'src/app/interfaces/to-do-item';
   styleUrls: ['./to-do-list.component.scss']
 })
 export class ToDoListComponent implements OnDestroy {
-id: string = localStorage.getItem("to-do-tab") || "active";
+  id: string = localStorage.getItem("to-do-tab") || "active";
   pending: ToDoItem[] = JSON.parse(localStorage.getItem("to-do-pending")!) || [];
   completed: ToDoItem[] = JSON.parse(localStorage.getItem("to-do-completed")!) || [];
-  input = ""; destr = new Subject<void>();
+  input = ""; 
+  destr = new Subject<void>();
 
   constructor(private rend: Renderer2){}
   ngOnDestroy(): void {this.destr.next()}
