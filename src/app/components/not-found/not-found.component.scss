@@ -1,0 +1,26 @@
+.not-found{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     flex-direction: column;
+     h2{
+          font-size: 72px;
+          background: linear-gradient(to left, blue, #0092ff);
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+     }
+     p{margin: 20px 0;}
+     a{
+          border: 2px solid #0092ff;
+          padding: 10px 20px;
+          color: #0092ff;
+          font-size: 18px;
+          border-radius: 8px;
+          transition: .3s ease all;
+          &:hover{
+               background-color: #0092ff;
+               color: white;
+          }
+     }
+}

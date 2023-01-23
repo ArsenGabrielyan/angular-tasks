@@ -7,7 +7,8 @@ import { AdminService } from 'src/app/services/admin.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  toggled = false; account = this.adminService.getRole();
+  toggled = false; 
+  account = this.adminService.getRole();
   constructor(private adminService: AdminService){}
   toggleLinks = () => this.toggled = !this.toggled;
   closeToggler = () => this.toggled = false;

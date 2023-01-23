@@ -8,5 +8,5 @@ import { AdminService } from './services/admin.service';
 })
 export class AppComponent implements OnInit {
   constructor(private adminService: AdminService){}
-  ngOnInit(): void {this.adminService.setRole("user");}
+  ngOnInit(): void {this.adminService.setRole("admin");}
 }
