@@ -1,5 +1,5 @@
 <nav class="navbar">
-     <h1 class="logo" routerLink="/">All Angular Projects</h1>
+     <h1 class="logo" routerLink="/">Tasks With Angular Test</h1>
      <span class="toggler" (click)="toggleLinks()"><span class="material-symbols-outlined">{{toggled ? 'close' : 'menu'}}</span></span>
      <ul class="links" [ngClass]="{'active': toggled}">
           <li class="link" (click)="closeToggler()" *accountType="account"><a routerLink="/notes">Notes</a></li>
