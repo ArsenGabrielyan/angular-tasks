@@ -18,7 +18,10 @@ export class ToDoListComponent implements OnDestroy {
   constructor(private rend: Renderer2){}
   ngOnDestroy(): void {this.destr.next()}
   
-  tabChange(t:string){this.id = t;localStorage.setItem("to-do-tab", this.id)}
+  tabChange(t:string){
+    this.id = t;
+    localStorage.setItem("to-do-tab", this.id)
+  }
   addToDo(form: NgForm){
     let item: ToDoItem = {item: this.input,checked: false};this.pending.push(item);
     localStorage.setItem("to-do-pending", JSON.stringify(this.pending));form.reset(this.input)
@@ -37,19 +40,24 @@ export class ToDoListComponent implements OnDestroy {
   }
   deleteToDo(i:number){
     const sure = confirm("Are you sure to delete this task (item)?")
-    if(sure){this.completed.splice(i,1);localStorage.setItem("to-do-completed", JSON.stringify(this.completed))}
+    if(sure){
+      this.completed.splice(i,1);
+      localStorage.setItem("to-do-completed", JSON.stringify(this.completed))
+    }
   }
   markAll(){
     if(!this.pending.length) {alert("There is No Active Tasks to Mark them all"); return;};
     this.pending.map((_,i)=>{
-      this.pending[i].checked = true;this.completed.push(this.pending[i]);
+      this.pending[i].checked = true;
+      this.completed.push(this.pending[i]);
       if(this.pending[i].checked) this.removeItem(document.querySelectorAll(".toDo")[i], i, this.pending.length);
     })
   }
   removeItem(parent: any, i:number, count: number = 1){
     this.rend.addClass(parent, "hide")
       timer(500).pipe(map(()=> {
-        parent.remove();this.pending.splice(i,count)
+        parent.remove();
+        this.pending.splice(i,count)
         localStorage.setItem("to-do-pending", JSON.stringify(this.pending))
       }),takeUntil(this.destr)).subscribe();
     localStorage.setItem("to-do-completed", JSON.stringify(this.completed))
@@ -57,6 +65,11 @@ export class ToDoListComponent implements OnDestroy {
   clearAll(){
     if(!this.completed.length) {alert("There is no Completed Tasks"); return};
     const sure = confirm("Are you sure to Clear all Completed Tasks?");
-    this.completed.map(()=>{if(sure){this.completed.splice(0,this.completed.length);localStorage.setItem("to-do-completed", JSON.stringify(this.completed))}})
+    this.completed.map(()=>{
+      if(sure){
+        this.completed.splice(0,this.completed.length);
+        localStorage.setItem("to-do-completed", JSON.stringify(this.completed))
+      }
+    })
   }
 }
