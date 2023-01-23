@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { NotesAppRoutingModule } from './notes-app-routing.module';
 import { NotesAppComponent } from './notes-app.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NotesAppComponent
+    NotesAppComponent,
   ],
   imports: [
     CommonModule,
-    NotesAppRoutingModule
+    NotesAppRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class NotesAppModule { }

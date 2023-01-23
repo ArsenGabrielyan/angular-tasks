@@ -1,1 +1,27 @@
-<p>Weather Application here</p>
+<div class="weather-container" id="app">
+     <div class="upper">
+          <div class="app-header">
+               <h1>Weather</h1>
+          </div>
+          <div class="frm-group">
+               <input id="search-input" type="text" name="input" placeholder="Enter Location" [(ngModel)]="input"
+                    required>
+               <button (click)="searchWeather()" id="btn">Search</button>
+          </div>
+          <button class="geo-btn" (click)="showWeatherFromPosition()" id="btn">Get Weather From Current
+               Location</button>
+     </div>
+     <div class="lower" *ngIf="isShown">
+          <h2>Weather in {{city | titlecase}}</h2>
+          <div class="details">
+               <img src="../assets/icons/{{code}}.svg" alt="weather-icon">
+               <h2 class="temperature">{{temp}}</h2>
+               <img src="../assets/icons/celsius.svg" alt="system" class="system">
+          </div>
+          <p class="weather-type">{{current}}</p>
+          <ul class="other-details">
+               <li><img src="../assets/icons/humidity.svg" alt="humidity"> Humidity: {{humid}}%</li>
+               <li><img src="../assets/icons/wind.svg" alt="humidity">Wind: {{windspd}} km/h</li>
+          </ul>
+     </div>
+</div>
