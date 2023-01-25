@@ -1,0 +1,47 @@
+@import "../../scss/mixins.scss";
+.form-container{
+     display: flex;
+     @include flex-align(center,center);
+     min-height: 100vh;
+     background-color: $blue-primary;
+     form{
+          width: 100%;
+          max-width: 512px;
+          background-color: $light;
+          padding: 25px; border-radius: 8px;
+          h2{margin: 10px 0; font-size: 48px; font-weight: 400;}
+          .frmGroup{
+               width: 100%;
+               display: flex;
+               flex-direction: column;
+               @include flex-align(center,center);
+               label{width: 100%;font-size: 16.5px;margin: 5px 0;}
+               input{
+                    width: 100%;
+                    padding: 8px;
+                    outline: none;
+                    border: 2px solid #afafaf;
+                    border-radius: 8px;
+                    transition: .3s ease all;
+                    &:focus{border-color: $blue-primary;box-shadow: 0 0 8px 0px $blue-primary;}
+               }
+          }
+          .frmCheck{
+               display: flex;
+               @include flex-align(flex-start, center);
+               input{width: 20px; height: 20px;margin: 10px 0; accent-color: $blue-primary;}
+               label{margin-left: 10px;}
+          }
+          button{
+               width: 100%;
+               padding: 8px 20px;
+               border: 2px solid $blue-primary;
+               border-radius: 8px;
+               font-size: 18px;
+               color: $blue-primary;
+               outline: none; background: none;
+               cursor: pointer; transition: .3s ease all;
+               &:hover{background: $blue-primary;color: white;}
+          }
+     }
+}

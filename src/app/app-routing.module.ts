@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: "notes", loadChildren: ()=>import("./modules/notes-app/notes-app.module").then(m=>m.NotesAppModule)},
   {path: "to-do-list", loadChildren: ()=>import("./modules/to-do-list/to-do-list.module").then(m=>m.ToDoListModule)},
   {path: "weather", loadChildren: ()=>import("./modules/weather-app/weather-app.module").then(m=>m.WeatherAppModule)},
+  {path: "registration", loadChildren: ()=>import("./modules/registration/registration.module").then(m=>m.RegistrationModule)},
   {path: "**", component: NotFoundComponent}
 ];
 

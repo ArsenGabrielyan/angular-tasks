@@ -3,7 +3,6 @@
      <span class="toggler" (click)="toggleLinks()"><span class="material-symbols-outlined">{{toggled ? 'close' : 'menu'}}</span></span>
      <ul class="links" [ngClass]="{'active': toggled}">
           <li class="link" (click)="closeToggler()" *accountType="account"><a routerLink="/notes">Notes</a></li>
-          <li class="link" (click)="closeToggler()"><a routerLink="/to-do-list">To Do List</a></li>
-          <li class="link" (click)="closeToggler()"><a routerLink="/weather">Weather</a></li>
+          <li class="link" *ngFor="let item of navItem" (click)="closeToggler()"><a [routerLink]="item.link">{{item.text}}</a></li>
      </ul>
 </nav>

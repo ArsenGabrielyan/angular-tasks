@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Note } from 'src/app/interfaces/note';
+import { INote } from 'src/app/interfaces/note';
 import { CustomValidation } from './classes/custom-validation';
 
 @Component({
@@ -18,8 +18,8 @@ export class NotesAppComponent implements OnInit {
   viewTitle!: string; 
   viewNote!: string; 
   chosen!: number;
-  notes: Note[] = JSON.parse(localStorage.getItem('notes')!) || [];
-  deleted: Note[] = JSON.parse(localStorage.getItem('deleted-notes')!) || [];
+  notes: INote[] = JSON.parse(localStorage.getItem('notes')!) || [];
+  deleted: INote[] = JSON.parse(localStorage.getItem('deleted-notes')!) || [];
   tab = localStorage.getItem("notes-tab") || "notes";
   constructor(private fbuild: FormBuilder){}
   ngOnInit():void{
@@ -34,7 +34,7 @@ export class NotesAppComponent implements OnInit {
   }
   addNote(){
     const {title,note} = this.frmNotes.value;
-    let data: Note = {title:title,note:note};
+    let data: INote = {title:title,note:note};
     this.notes.push(data);
     localStorage.setItem('notes',JSON.stringify(this.notes));
     this.frmNotes.reset({title:"",note:""})

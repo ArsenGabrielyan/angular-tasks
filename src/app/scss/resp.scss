@@ -25,6 +25,13 @@
           } 
           .lower{width: 90% !important; .contentVal .toDoList .toDo .container{padding-left: 32px;}}
      }
+     .form-container{
+          padding: 10px;
+          form h2{font-size: 36px !important;text-align: center;}
+     }
 }
 @media screen and (max-width: 500px){.notes-container .lower{column-count: 1 !important;}}
-@media screen and (max-width: 400px) {.navbar .logo{font-size: 20px !important;}}
+@media screen and (max-width: 400px) {
+     .navbar .logo{font-size: 20px !important;}
+     .form-container form h2{font-size: 24px !important;}
+}

@@ -1,0 +1,34 @@
+<div class="form-container">
+     <form [formGroup]="frmRegistration" (ngSubmit)="handleSubmit()">
+          <h2>Create an Account</h2>
+          <div class="frmGroup">
+               <label for="name">Full Name</label>
+               <input type="text" id="name" formControlName="name" placeholder="e.g. John Adams">
+          </div>
+          <div class="frmGroup">
+               <label for="email">Email</label>
+               <input type="email" id="email" formControlName="email" placeholder="e.g. name@example.com">
+          </div>
+          <div class="frmGroup">
+               <label for="tel">Phone Number</label>
+               <input type="tel" id="tel" formControlName="tel" placeholder="e.g. 012-345-678">
+          </div>
+          <div class="frmGroup">
+               <label for="bdate">Birth Date</label>
+               <input type="date" id="bdate" formControlName="bdate">
+          </div>
+          <div class="frmGroup">
+               <label for="pass">Password</label>
+               <input type="password" id="pass" formControlName="pass">
+          </div>
+          <div class="frmGroup">
+               <label for="confPass">Confirm Password</label>
+               <input type="password" id="confPass" formControlName="confirmPass">
+          </div>
+          <div class="frmCheck">
+               <input type="checkbox" formControlName="chkAgreed">
+               <label for="name">Agreed with a TOS</label>
+          </div>
+          <button type="submit">Register</button>
+     </form>
+</div>

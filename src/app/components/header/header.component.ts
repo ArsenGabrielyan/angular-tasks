@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { INavItem } from 'src/app/interfaces/nav-item';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -8,6 +9,11 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class HeaderComponent {
   toggled = false; 
+  navItem: INavItem[] = [
+    {text: "To Do List", link: '/to-do-list'},
+    {text: "Weather", link: '/weather'},
+    {text: "Registration", link: '/registration'},
+  ]
   account = this.adminService.getRole();
   constructor(private adminService: AdminService){}
   toggleLinks = () => this.toggled = !this.toggled;
