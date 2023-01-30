@@ -20,10 +20,14 @@ export class ToDoListComponent implements OnDestroy {
   
   tabChange(t:string){
     this.id = t;
-    localStorage.setItem("to-do-tab", this.id)
+    localStorage.setItem("to-do-tab", this.id);
   }
   addToDo(form: NgForm){
-    let item: IToDoItem = {item: this.input,checked: false};this.pending.push(item);
+    let item: IToDoItem = {
+      item: this.input,
+      checked: false
+    };
+    this.pending.push(item);
     localStorage.setItem("to-do-pending", JSON.stringify(this.pending));form.reset(this.input)
   }
   handleCheckBox(e:any, i:number){
@@ -31,12 +35,14 @@ export class ToDoListComponent implements OnDestroy {
     const parent = e.target.parentNode.parentElement;
     this.pending[i].checked = !this.pending[i].checked;
     this.completed.push(this.pending[i]);
-    if(e.target.checked === this.pending[i].checked) this.removeItem(parent,i);
+    if(e.target.checked === this.pending[i].checked){
+      this.removeItem(parent,i);
+    }
   }
   editToDo(i:number){
     const newVal = prompt('Enter a new Value'); 
     newVal?.trim() === "" ? alert("It's Required") : this.pending[i].item = newVal!;
-    localStorage.setItem("to-do-pending", JSON.stringify(this.pending))
+    localStorage.setItem("to-do-pending", JSON.stringify(this.pending));
   }
   deleteToDo(i:number){
     const sure = confirm("Are you sure to delete this task (item)?")
@@ -46,24 +52,32 @@ export class ToDoListComponent implements OnDestroy {
     }
   }
   markAll(){
-    if(!this.pending.length) {alert("There is No Active Tasks to Mark them all"); return;};
+    if(!this.pending.length) {
+      alert("There is No Active Tasks to Mark them all"); 
+      return;
+    }
     this.pending.map((_,i)=>{
       this.pending[i].checked = true;
       this.completed.push(this.pending[i]);
-      if(this.pending[i].checked) this.removeItem(document.querySelectorAll(".toDo")[i], i, this.pending.length);
+      if(this.pending[i].checked){
+        this.removeItem(document.querySelectorAll(".toDo")[i], i, this.pending.length);
+      }
     })
   }
   removeItem(parent: any, i:number, count: number = 1){
-    this.rend.addClass(parent, "hide")
-      timer(500).pipe(map(()=> {
-        parent.remove();
-        this.pending.splice(i,count)
-        localStorage.setItem("to-do-pending", JSON.stringify(this.pending))
-      }),takeUntil(this.destr)).subscribe();
+    this.rend.addClass(parent, "hide");
+    timer(500).pipe(map(()=>{
+      parent.remove();
+      this.pending.splice(i,count);
+      localStorage.setItem("to-do-pending", JSON.stringify(this.pending))
+    }),takeUntil(this.destr)).subscribe();
     localStorage.setItem("to-do-completed", JSON.stringify(this.completed))
   }
   clearAll(){
-    if(!this.completed.length) {alert("There is no Completed Tasks"); return};
+    if(!this.completed.length){
+      alert("There is no Completed Tasks"); 
+      return;
+    }
     const sure = confirm("Are you sure to Clear all Completed Tasks?");
     this.completed.map(()=>{
       if(sure){

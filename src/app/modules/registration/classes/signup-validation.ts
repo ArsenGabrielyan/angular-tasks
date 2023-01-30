@@ -41,7 +41,7 @@ export class SignupValidation {
                (age < 18 || age > 80) ||
                dayjs().isBefore(val)
           ){
-               return {invalidAge: true}
+               return {invalidAge: true};
           } else {
                return null;
           }

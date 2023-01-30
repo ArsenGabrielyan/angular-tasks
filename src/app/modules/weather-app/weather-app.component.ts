@@ -18,12 +18,15 @@ export class WeatherAppComponent {
   humid = 0;
   code = 0;
   current!:string;
+
   constructor(private req: HttpService, private other: OtherFeaturesService){}
   ngAfterViewInit(): void {
     this.isShown = false;
-    window.onkeydown = (e)=>{if(e.key === "Enter") this.searchWeather();}
+    window.onkeydown = (e)=>{
+      if(e.key === "Enter") this.searchWeather();
+    }
   }
-  switchTab = (tab:string) => this.tab = tab;
+
   getWeather(val:any){
     this.req.getPlaceFrom(val.latitude,val.longitude).pipe(map((place:any)=>this.getPlace(place))).subscribe();
     const {temperature_120m,windspeed_120m,relativehumidity_2m,weathercode} = val.hourly;
@@ -35,7 +38,10 @@ export class WeatherAppComponent {
     this.current = this.other.getWeatherFromCode(this.code)!;
   }
   searchWeather(){
-    if(this.input.trim() === "") {alert("Enter City or Location");this.input = ""}
+    if(this.input.trim() === "") {
+      alert("Enter City or Location");
+      this.input = ""
+    }
     else this.req.getWeatherDetails(this.input).subscribe(val=>val.pipe(map((res:any)=>this.getWeather(res)),finalize(()=>this.input="")).subscribe());
   }
   showWeatherFromPosition(){
@@ -47,7 +53,8 @@ export class WeatherAppComponent {
     }
   }
   getPlace(place:any){
-    const {city,village,town,municipality, country, state, hamlet} = place.address, 
-    mentionedCommunity = city || village || town || municipality || state || hamlet;
-    this.city = `${mentionedCommunity || ""}${mentionedCommunity ? ", " : ""} ${country}`}
+    const {city,village,town,municipality, country, state, hamlet} = place.address; 
+    const mentionedCommunity = city || village || town || municipality || state || hamlet;
+    this.city = `${mentionedCommunity || ""}${mentionedCommunity ? ", " : ""} ${country}`;
+  }
 }

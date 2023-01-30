@@ -9,6 +9,7 @@ import { SignupValidation } from './classes/signup-validation';
 })
 export class RegistrationComponent implements OnInit {
   frmRegistration!: FormGroup;
+
   constructor(private fb: FormBuilder){}
   ngOnInit(): void {
     this.frmRegistration = this.fb.group({
@@ -23,6 +24,7 @@ export class RegistrationComponent implements OnInit {
       validator: [SignupValidation.matchPassword("pass", "confirmPass")]
     })
   }
+  
   handleSubmit(){
     alert(JSON.stringify(this.frmRegistration.value))
     this.frmRegistration.reset({
