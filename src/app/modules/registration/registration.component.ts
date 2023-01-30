@@ -9,20 +9,30 @@ import { SignupValidation } from './classes/signup-validation';
 })
 export class RegistrationComponent implements OnInit {
   frmRegistration!: FormGroup;
-  constructor(private frmBuilder: FormBuilder){}
+  constructor(private fb: FormBuilder){}
   ngOnInit(): void {
-    this.frmRegistration = this.frmBuilder.group({
-      name: ["", [Validators.required, Validators.minLength(2)]],
-      email: ["", [Validators.required, SignupValidation.validateEmail]],
-      tel: ["", [Validators.required, SignupValidation.validatePhone]],
-      bdate: [""],
-      pass: ["", [Validators.required, Validators.minLength(8)]],
-      confirmPass: ["", [Validators.required, SignupValidation.matchPassword(this.frmRegistration.value.pass)]],
-      chkAgreed: [false]
+    this.frmRegistration = this.fb.group({
+      fname: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, SignupValidation.validateEmail]],
+      tel: ['', [Validators.required, SignupValidation.validatePhone]],
+      bdate: ['', [Validators.required, SignupValidation.validateBday]],
+      pass: ['', [Validators.required, Validators.minLength(8)]],
+      confirmPass: ['', [Validators.required, Validators.minLength(8)]],
+      chkAgreed: [false, [Validators.requiredTrue]]
+    },{
+      validator: [SignupValidation.matchPassword("pass", "confirmPass")]
     })
   }
   handleSubmit(){
     alert(JSON.stringify(this.frmRegistration.value))
-    this.frmRegistration.reset({name: "",email: "",tel: "",pass: "",confirmPass: "",chkAgreed: false})
+    this.frmRegistration.reset({
+      name: "",
+      email: "",
+      tel: "",
+      bdate: "",
+      pass: "",
+      confirmPass: "",
+      chkAgreed: false
+    })
   }
 }

@@ -3,32 +3,32 @@
           <h2>Create an Account</h2>
           <div class="frmGroup">
                <label for="name">Full Name</label>
-               <input type="text" id="name" formControlName="name" placeholder="e.g. John Adams">
+               <input type="text" id="name" formControlName="fname" placeholder="e.g. John Adams" [ngClass]="{'error': frmRegistration.controls['fname'].invalid}">
           </div>
           <div class="frmGroup">
                <label for="email">Email</label>
-               <input type="email" id="email" formControlName="email" placeholder="e.g. name@example.com">
+               <input type="email" id="email" formControlName="email" placeholder="e.g. name@example.com" [ngClass]="{'error': frmRegistration.controls['email'].invalid}">
           </div>
           <div class="frmGroup">
                <label for="tel">Phone Number</label>
-               <input type="tel" id="tel" formControlName="tel" placeholder="e.g. 012-345-678">
+               <input type="tel" id="tel" formControlName="tel" placeholder="e.g. 012-345-678" [ngClass]="{'error': frmRegistration.controls['tel'].invalid}">
           </div>
           <div class="frmGroup">
                <label for="bdate">Birth Date</label>
-               <input type="date" id="bdate" formControlName="bdate">
+               <input type="date" id="bdate" formControlName="bdate" [ngClass]="{'error': frmRegistration.controls['bdate'].invalid}">
           </div>
           <div class="frmGroup">
                <label for="pass">Password</label>
-               <input type="password" id="pass" formControlName="pass">
+               <input type="password" id="pass" formControlName="pass" [ngClass]="{'error': frmRegistration.controls['pass'].invalid}">
           </div>
           <div class="frmGroup">
                <label for="confPass">Confirm Password</label>
-               <input type="password" id="confPass" formControlName="confirmPass">
+               <input type="password" id="confPass" formControlName="confirmPass" [ngClass]="{'error': frmRegistration.controls['confirmPass'].invalid}">
           </div>
           <div class="frmCheck">
                <input type="checkbox" formControlName="chkAgreed">
                <label for="name">Agreed with a TOS</label>
           </div>
-          <button type="submit">Register</button>
+          <button type="submit" [disabled]="frmRegistration.invalid">Register</button>
      </form>
 </div>

@@ -5,8 +5,7 @@
      min-height: 100vh;
      background-color: $blue-primary;
      form{
-          width: 100%;
-          max-width: 512px;
+          width: 100%;max-width: 512px;
           background-color: $light;
           padding: 25px; border-radius: 8px;
           h2{margin: 10px 0; font-size: 48px; font-weight: 400;}
@@ -17,13 +16,16 @@
                @include flex-align(center,center);
                label{width: 100%;font-size: 16.5px;margin: 5px 0;}
                input{
-                    width: 100%;
-                    padding: 8px;
-                    outline: none;
+                    width: 100%;padding: 8px;outline: none;
                     border: 2px solid #afafaf;
-                    border-radius: 8px;
-                    transition: .3s ease all;
+                    border-radius: 8px;transition: .3s ease all;
                     &:focus{border-color: $blue-primary;box-shadow: 0 0 8px 0px $blue-primary;}
+                    &.error{
+                         border-color: #dc3545;
+                         color: red;
+                         &::placeholder{color: #dc3545;}
+                         &:focus{border-color: #dc3545;box-shadow: 0 0 8px 0px #dc3545;}
+                    }
                }
           }
           .frmCheck{
@@ -41,7 +43,8 @@
                color: $blue-primary;
                outline: none; background: none;
                cursor: pointer; transition: .3s ease all;
-               &:hover{background: $blue-primary;color: white;}
+               &:disabled{border-color: grey;color: grey;cursor: auto;}
+               &:hover:not(:disabled){background: $blue-primary;color: white;}
           }
      }
 }
