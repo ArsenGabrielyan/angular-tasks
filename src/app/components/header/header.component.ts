@@ -13,6 +13,7 @@ export class HeaderComponent {
     {text: "To Do List", link: '/to-do-list'},
     {text: "Weather", link: '/weather'},
     {text: "Users", link: '/registration'},
+    {text: "All Products", link: '/products'},
   ]
   account = this.adminService.getRole();
   constructor(private adminService: AdminService){}

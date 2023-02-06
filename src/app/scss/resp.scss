@@ -1,6 +1,6 @@
 @import "../scss/mixins.scss";
 @media screen and (max-width: 1024px){.notes-container .lower{column-count: 3 !important;.note .buttons{flex-direction: column; button{width: 100%}}}}
-@media screen and (max-width: 800px){
+@media screen and (max-width: 850px){
      .navbar{
           position: relative;
           .toggler{display: block !important;}
