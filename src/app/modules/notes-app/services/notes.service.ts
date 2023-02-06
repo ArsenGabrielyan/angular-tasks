@@ -9,21 +9,21 @@ export class NotesService {
 
   constructor() { }
 
-  addNote(notes: INote[], form: FormGroup){
+  add(notes: INote[], form: FormGroup){
     const {title,note} = form.value;
     let data: INote = {title:title,note:note};
     notes.push(data);
     localStorage.setItem('notes',JSON.stringify(notes));
     form.reset({title:"",note:""})
   }
-  editNote(form: FormGroup, notes: INote[], chosen: number){
+  edit(form: FormGroup, notes: INote[], chosen: number){
     const {newTitle,newNote} = form.value;
     notes[chosen].title = newTitle;
     notes[chosen].note = newNote;
     localStorage.setItem('notes',JSON.stringify(notes));
     form.reset({newTitle: "",newNote: "",});
   }
-  deleteNote(del: INote[], notes: INote[], i:number){
+  delete(del: INote[], notes: INote[], i:number){
     del.push(notes[i]);
     notes.splice(i,1);
     localStorage.setItem('notes',JSON.stringify(notes));

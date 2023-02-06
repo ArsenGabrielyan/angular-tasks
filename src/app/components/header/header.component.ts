@@ -12,7 +12,7 @@ export class HeaderComponent {
   navItem: INavItem[] = [
     {text: "To Do List", link: '/to-do-list'},
     {text: "Weather", link: '/weather'},
-    {text: "Registration", link: '/registration'},
+    {text: "Users", link: '/registration'},
   ]
   account = this.adminService.getRole();
   constructor(private adminService: AdminService){}

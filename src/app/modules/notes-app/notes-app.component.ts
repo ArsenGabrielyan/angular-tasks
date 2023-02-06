@@ -36,14 +36,14 @@ export class NotesAppComponent implements OnInit {
     localStorage.setItem('notes-tab',this.tab);
   }
   addNote(){
-    this.noteService.addNote(this.notes, this.frmNotes);
+    this.noteService.add(this.notes, this.frmNotes);
   }
   editNote(){
-    this.noteService.editNote(this.frmEdit, this.notes, this.chosen);
+    this.noteService.edit(this.frmEdit, this.notes, this.chosen);
     this.closeEditModal();
   }
   deleteNote(i:number){
-    this.noteService.deleteNote(this.deleted,this.notes,i);
+    this.noteService.delete(this.deleted,this.notes,i);
   }
   openEditModal(i:number){
     this.editMdl = true;
