@@ -19,23 +19,14 @@
                     </tr>
                </thead>
                <tbody>
-                    <tr>
-                         <td>IPhone 15</td>
-                         <td>adsasdasdasdadsasdsdsdadsdsa</td>
-                         <td>0</td>
-                         <td>50</td>
-                         <td>235</td>
-                         <td>0</td>
-                         <td>Item</td>
-                    </tr>
-                    <tr>
-                         <td>S21 Ultra</td>
-                         <td>adsasdasdasdadsasdsdsdadsdsa</td>
-                         <td>0</td>
-                         <td>100</td>
-                         <td>235</td>
-                         <td>1</td>
-                         <td>Item</td>
+                    <tr *ngFor="let product of prodList">
+                         <td>{{product.name}}</td>
+                         <td>{{product.description}}</td>
+                         <td>{{product.onhand}}</td>
+                         <td>{{product.lowstock}}</td>
+                         <td>{{product.onorder}}</td>
+                         <td>{{product.available}}</td>
+                         <td>{{product.unit}}</td>
                     </tr>
                </tbody>
           </table>

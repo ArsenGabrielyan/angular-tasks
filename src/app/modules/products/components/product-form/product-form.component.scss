@@ -35,7 +35,6 @@
                margin: 10px;
                @include flex-align(space-between,center);
                input, textarea{
-                    width: 100%;
                     width: 100%;padding: 8px;outline: none;
                     border: 2px solid #afafaf;
                     border-radius: 8px;transition: .3s ease all;
@@ -48,13 +47,13 @@
                     }
                };
                textarea{resize: vertical;}
-               label{width: 100%;margin: 10px 0;}
+               label{width: 100%;margin: 10px 0;font-size: 18px;}
                flex-direction: column;
           }
           .frmFlex{display: flex;width: 100%;}
           button{
                margin: 10px;border-radius: 8px;
-               border: 2px solid $blue-primary;
+               border: 2px solid $blue-primary;font-size: 18px;
                padding: 10px 20px;transition: .3s ease;
                color: $blue-primary;cursor: pointer;
                &:hover{background: $blue-primary;color: white;}
