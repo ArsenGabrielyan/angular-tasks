@@ -1,0 +1,43 @@
+<div class="products-container">
+     <div class="header">
+          <h1>Create Product</h1>
+          <div class="buttons">
+               <button routerLink="/products">Sales</button>
+          </div>
+     </div>
+     <form class="frmProducts">
+          <div class="frmGroup">
+               <label for="name">Name</label>
+               <input type="text" placeholder="e.g. Samsung S21 Ultra" id="name">
+          </div>
+          <div class="frmGroup">
+               <label for="desc">Description</label>
+               <textarea placeholder="Type Information about this Product" id="desc"></textarea>
+          </div>
+          <div class="frmFlex">
+               <div class="frmGroup">
+                    <label for="onhand">On Hand</label>
+                    <input type="number" id="onhand">
+               </div>
+               <div class="frmGroup">
+                    <label for="lowstock">Low Stock</label>
+                    <input type="number" id="lowstock">
+               </div>
+          </div>
+          <div class="frmFlex">
+               <div class="frmGroup">
+                    <label for="onorder">On Order</label>
+                    <input type="number" id="onorder">
+               </div>
+               <div class="frmGroup">
+                    <label for="available">Available</label>
+                    <input type="number" id="available">
+               </div>
+          </div>
+          <div class="frmGroup">
+               <label for="unit">Unit</label>
+               <input type="text" placeholder="e.g. Item" id="unit">
+          </div>
+          <button type="submit">Create And Add</button>
+     </form>
+</div>

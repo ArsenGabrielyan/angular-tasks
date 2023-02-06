@@ -1,0 +1,63 @@
+@import "../../../../scss/mixins.scss";
+.products-container{
+     min-height: 100vh;display: flex;
+     @include flex-align(flex-start,center);padding: 15px;
+     flex-direction: column;background: $blue-primary;
+     .header{
+          width: 100%;display: flex;padding: 27px;
+          @include flex-align(space-between,center);
+          background: $light;border-radius: 8px;
+          h1{font-weight: 400;}
+          .buttons{
+               display: flex;@include flex-align(space-between,center);
+               button{
+                    margin: 10px;border-radius: 8px;
+                    border: 2px solid $blue-primary;
+                    padding: 10px 20px;font-size: 18px;
+                    color: $blue-primary;cursor: pointer;
+                    transition: .3s ease;
+                    &:hover{background: $blue-primary;color: white;}
+               }
+          }
+     }
+     .frmProducts{
+          width: 100%;
+          max-width: 750px;
+          display: flex;@include flex-align(center,center);
+          flex-direction: column;
+          background: $light;
+          margin: 15px 0;
+          border-radius: 8px;
+          padding: 27px;
+          .frmGroup{
+               width: 100%;
+               display: flex;
+               margin: 10px;
+               @include flex-align(space-between,center);
+               input, textarea{
+                    width: 100%;
+                    width: 100%;padding: 8px;outline: none;
+                    border: 2px solid #afafaf;
+                    border-radius: 8px;transition: .3s ease all;
+                    &:focus{border-color: $blue-primary;box-shadow: 0 0 8px 0px $blue-primary;}
+                    &.error{
+                         border-color: #dc3545;
+                         color: red;
+                         &::placeholder{color: #dc3545;}
+                         &:focus{border-color: #dc3545;box-shadow: 0 0 8px 0px #dc3545;}
+                    }
+               };
+               textarea{resize: vertical;}
+               label{width: 100%;margin: 10px 0;}
+               flex-direction: column;
+          }
+          .frmFlex{display: flex;width: 100%;}
+          button{
+               margin: 10px;border-radius: 8px;
+               border: 2px solid $blue-primary;
+               padding: 10px 20px;transition: .3s ease;
+               color: $blue-primary;cursor: pointer;
+               &:hover{background: $blue-primary;color: white;}
+          }
+     }
+}

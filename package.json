@@ -6,6 +6,7 @@
     "start": "ng serve -o",
     "build": "ng build -c=production",
     "watch": "ng build --watch --configuration development",
+    "start-server": "json-server src/assets/db.json",
     "test": "ng test"
   },
   "private": true,

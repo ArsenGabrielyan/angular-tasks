@@ -1,0 +1,40 @@
+@import "../../scss/mixins.scss";
+.products-container{
+     min-height: 100vh;display: flex;
+     @include flex-align(flex-start,center);padding: 15px;
+     flex-direction: column;background: $blue-primary;
+     .header{
+          width: 100%;display: flex;padding: 27px;
+          @include flex-align(space-between,center);
+          background: $light;border-radius: 8px;
+          h1{font-weight: 400;}
+          .buttons{
+               display: flex;@include flex-align(space-between,center);
+               button{
+                    margin: 10px;border-radius: 8px;
+                    border: 2px solid $blue-primary;
+                    padding: 10px 20px;font-size: 18px;
+                    color: $blue-primary;cursor: pointer;
+                    transition: .3s ease;
+                    &:hover{background: $blue-primary;color: white;}
+               }
+          }
+     }
+     .tblContainer{
+          width: 100%;overflow-x: auto;flex-direction: column;
+          display: flex;@include flex-align(center,stretch);
+          .tblProducts{
+               margin: 15px 0;border-collapse: collapse;
+               padding: 27px;background: $light;
+               thead {
+                    background: #e0e0e0;
+                    tr th{ 
+                         padding: 27px 10px;text-align: left;
+                         border-right: 2px solid #cfcfcf;
+                         &:last-child{border-right: none;}
+                    }
+               }
+               tbody tr td{border-bottom: 2px solid #cfcfcf;padding: 27px 10px;}
+          }
+     }
+}
