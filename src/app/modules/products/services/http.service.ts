@@ -18,4 +18,12 @@ export class HttpService {
     const url = "http://localhost:3000/products";
     return this.http.get(url);
   }
+  public getProductById(id:number): Observable<any>{
+    const url = `http://localhost:3000/products/${id}`;
+    return this.http.get(url);
+  }
+  public editProduct(id: number, product: IProduct): Observable<any>{
+    const url = `http://localhost:3000/products/${id}`;
+    return this.http.put(url,product);
+  }
 }

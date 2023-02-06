@@ -1,9 +1,10 @@
 export interface IProduct {
      name: string,
-     description: string,
+     desc: string,
      onhand: number,
      lowstock: number,
      onorder: number,
      available: number,
-     unit: string
+     unit: string,
+     id?: number
 }

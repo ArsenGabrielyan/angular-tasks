@@ -16,17 +16,22 @@
                          <th>On Order</th>
                          <th>Available</th>
                          <th>Unit</th>
+                         <th>Actions</th>
                     </tr>
                </thead>
                <tbody>
                     <tr *ngFor="let product of prodList">
                          <td>{{product.name}}</td>
-                         <td>{{product.description}}</td>
+                         <td>{{product.desc}}</td>
                          <td>{{product.onhand}}</td>
                          <td>{{product.lowstock}}</td>
                          <td>{{product.onorder}}</td>
                          <td>{{product.available}}</td>
                          <td>{{product.unit}}</td>
+                         <td>
+                              <button [routerLink]="[product.id]">Edit</button>
+                              <button>Delete</button>
+                         </td>
                     </tr>
                </tbody>
           </table>

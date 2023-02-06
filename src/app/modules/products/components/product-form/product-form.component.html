@@ -1,6 +1,7 @@
 <div class="products-container">
      <div class="header">
-          <h1>Create Product</h1>
+          <h1 *ngIf="!id">Create Product</h1>
+          <h1 *ngIf="id">Edit Product</h1>
           <div class="buttons">
                <button routerLink="/products">Back</button>
           </div>
@@ -38,6 +39,7 @@
                <label for="unit">Unit</label>
                <input type="text" placeholder="e.g. Item" id="unit" formControlName="unit">
           </div>
-          <button type="submit">Create And Add</button>
+          <button *ngIf="!id" type="submit">Create And Add</button>
+          <button *ngIf="id" type="submit">Save</button>
      </form>
 </div>
