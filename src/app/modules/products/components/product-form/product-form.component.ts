@@ -47,6 +47,6 @@ export class ProductFormComponent implements OnInit {
         unit: ""
       });
     }
-    this.router.navigateByUrl("/products")
+    this.router.navigateByUrl("/products");
   }
 }
