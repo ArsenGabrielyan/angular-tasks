@@ -26,4 +26,8 @@ export class HttpService {
     const url = `http://localhost:3000/products/${id}`;
     return this.http.put(url,product);
   }
+  public deleteProduct(id: number): Observable<any>{
+    const url = `http://localhost:3000/products/${id}`;
+    return this.http.delete(url);
+  }
 }

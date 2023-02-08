@@ -15,7 +15,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     HeaderComponent,
     AccTypeDirective,
     NotFoundComponent,
-    HomepageComponent
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

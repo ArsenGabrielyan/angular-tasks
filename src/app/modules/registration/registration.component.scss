@@ -1,4 +1,4 @@
-@import "../../scss/mixins.scss";
+@import "src/app/scss/mixins.scss";
 .form-container{
      display: flex;
      @include flex-align(center,center);

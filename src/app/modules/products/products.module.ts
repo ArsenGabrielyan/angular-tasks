@@ -6,6 +6,7 @@ import { ProductsComponent } from './products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    PipesModule
   ]
 })
 export class ProductsModule { }

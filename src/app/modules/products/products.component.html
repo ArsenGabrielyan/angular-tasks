@@ -28,9 +28,9 @@
                          <td>{{product.onorder}}</td>
                          <td>{{product.available}}</td>
                          <td>{{product.unit}}</td>
-                         <td>
+                         <td class="actions">
                               <button [routerLink]="[product.id]">Edit</button>
-                              <button>Delete</button>
+                              <button (click)="deleteProduct(product.id!)">Delete</button>
                          </td>
                     </tr>
                </tbody>

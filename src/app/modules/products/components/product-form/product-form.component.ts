@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs';
 import { IProduct } from 'src/app/interfaces/product';
+import { ProductFormValidator } from '../../classes/product-form-validator';
 import { HttpService } from '../../services/http.service';
 
 @Component({
@@ -16,13 +16,13 @@ export class ProductFormComponent implements OnInit {
   constructor(private frmBuild: FormBuilder, private httpService: HttpService, private route: ActivatedRoute){}
   ngOnInit(): void {
     this.frmProduct = this.frmBuild.group({
-      name: [""],
-      desc: [""],
+      name: ["", [Validators.required, Validators.minLength(2)]],
+      desc: ["", [Validators.required, Validators.minLength(2)]],
       onhand: [0],
       lowstock: [0],
       onorder: [0],
       available: [0],
-      unit: [""]
+      unit: ["", [Validators.required, ProductFormValidator.unitValidation]]
     });
     this.id = this.route.snapshot.params?.["id"];
     if(this.id){

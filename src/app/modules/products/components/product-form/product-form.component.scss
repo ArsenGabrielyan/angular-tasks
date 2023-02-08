@@ -1,4 +1,4 @@
-@import "../../../../scss/mixins.scss";
+@import "src/app/scss/mixins.scss";
 .products-container{
      min-height: 100vh;display: flex;
      @include flex-align(flex-start,center);padding: 15px;
@@ -41,7 +41,7 @@
                     &:focus{border-color: $blue-primary;box-shadow: 0 0 8px 0px $blue-primary;}
                     &.error{
                          border-color: #dc3545;
-                         color: red;
+                         color: #dc3545;
                          &::placeholder{color: #dc3545;}
                          &:focus{border-color: #dc3545;box-shadow: 0 0 8px 0px #dc3545;}
                     }
@@ -58,5 +58,6 @@
                color: $blue-primary;cursor: pointer;
                &:hover{background: $blue-primary;color: white;}
           }
+          .error{color: #dc3545;}
      }
 }

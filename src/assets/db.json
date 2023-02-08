@@ -1,44 +1,14 @@
 {
   "products": [
     {
-      "name": "Samsung S21 Ultra",
-      "desc": "Just a Phone",
+      "name": "aaaa",
+      "desc": "sdfsdf",
       "onhand": 0,
-      "lowstock": 200,
-      "onorder": 50,
-      "available": 2,
+      "lowstock": 0,
+      "onorder": 0,
+      "available": 0,
       "unit": "item",
       "id": 1
-    },
-    {
-      "name": "fghfghfghfhg",
-      "desc": "fgfghfhg",
-      "onhand": 0,
-      "lowstock": 0,
-      "onorder": 0,
-      "available": 0,
-      "unit": "fghfghfhg",
-      "id": 2
-    },
-    {
-      "name": "aaa",
-      "desc": "ertertertert",
-      "onhand": 0,
-      "lowstock": 0,
-      "onorder": 0,
-      "available": 0,
-      "unit": "ertertert",
-      "id": 3
-    },
-    {
-      "name": "sdgsdgsd",
-      "desc": "sdgsdgsdg",
-      "onhand": 0,
-      "lowstock": 0,
-      "onorder": 0,
-      "available": 0,
-      "unit": "sdgsdgsgd",
-      "id": 4
     }
   ]
 }

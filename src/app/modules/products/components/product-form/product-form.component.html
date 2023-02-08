@@ -9,11 +9,13 @@
      <form class="frmProducts" [formGroup]="frmProduct" (ngSubmit)="handleSubmit()">
           <div class="frmGroup">
                <label for="name">Name</label>
-               <input type="text" placeholder="e.g. Samsung S21 Ultra" id="name" formControlName="name">
+               <input type="text" placeholder="e.g. Samsung S21 Ultra" id="name" formControlName="name" [ngClass]="{'error': frmProduct.get('name')?.invalid}">
+               <p class="error">{{frmProduct.get("name")?.errors | validationMsg}}</p>
           </div>
           <div class="frmGroup">
                <label for="desc">Description</label>
-               <textarea placeholder="Type Information about this Product" id="desc" formControlName="desc"></textarea>
+               <textarea placeholder="Type Information about this Product" id="desc" formControlName="desc" [ngClass]="{'error': frmProduct.get('desc')?.invalid}"></textarea>
+               <p class="error">{{frmProduct.get("desc")?.errors | validationMsg}}</p>
           </div>
           <div class="frmFlex">
                <div class="frmGroup">
@@ -37,9 +39,10 @@
           </div>
           <div class="frmGroup">
                <label for="unit">Unit</label>
-               <input type="text" placeholder="e.g. Item" id="unit" formControlName="unit">
+               <input type="text" placeholder="e.g. Item" id="unit" formControlName="unit" [ngClass]="{'error': frmProduct.get('unit')?.invalid}">
+               <p class="error">{{frmProduct.get("unit")?.errors | validationMsg}}</p>
           </div>
-          <button *ngIf="!id" type="submit">Create And Add</button>
+          <button *ngIf="!id" type="submit">Create</button>
           <button *ngIf="id" type="submit">Save</button>
      </form>
 </div>

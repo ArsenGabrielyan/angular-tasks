@@ -1,4 +1,4 @@
-@import "../../scss/mixins.scss";
+@import "src/app/scss/mixins.scss";
 .navbar{
      display: flex;
      @include flex-align(space-between, center);
