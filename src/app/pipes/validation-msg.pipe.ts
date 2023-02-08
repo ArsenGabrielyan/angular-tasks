@@ -1,4 +1,4 @@
-import { ElementRef, Pipe, PipeTransform, ViewChild } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'validationMsg'

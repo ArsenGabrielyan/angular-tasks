@@ -1,7 +1,8 @@
 <div class="products-container">
      <div class="header">
           <h1>Product Library</h1>
-          <div class="buttons">
+          <div class="options">
+               <input type="search" name="search" autocomplete="off" placeholder="Search Something" [(ngModel)]="searchTerm">
                <button routerLink="/products/create">Create Product</button>
           </div>
      </div>
@@ -20,7 +21,7 @@
                     </tr>
                </thead>
                <tbody>
-                    <tr *ngFor="let product of prodList">
+                    <tr *ngFor="let product of prodList | search:searchTerm">
                          <td>{{product.name}}</td>
                          <td>{{product.desc}}</td>
                          <td>{{product.onhand}}</td>

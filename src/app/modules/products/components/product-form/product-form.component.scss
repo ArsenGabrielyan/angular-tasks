@@ -56,7 +56,8 @@
                border: 2px solid $blue-primary;font-size: 18px;
                padding: 10px 20px;transition: .3s ease;
                color: $blue-primary;cursor: pointer;
-               &:hover{background: $blue-primary;color: white;}
+               &:hover:not(:disabled){background: $blue-primary;color: white;}
+               &:disabled{border-color: grey;color: grey; cursor: auto;}
           }
           .error{color: #dc3545;}
      }

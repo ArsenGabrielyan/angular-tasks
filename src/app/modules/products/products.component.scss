@@ -8,15 +8,21 @@
           @include flex-align(space-between,center);
           background: $light;border-radius: 8px;
           h1{font-weight: 400;}
-          .buttons{
-               display: flex;@include flex-align(space-between,center);
+          .options{
+               display: flex;@include flex-align(flex-end,center);width: 100%;
                button{
-                    margin: 10px;border-radius: 8px;
+                    margin: 8px;border-radius: 8px;
                     border: 2px solid $blue-primary;
                     padding: 10px 20px;font-size: 18px;
                     color: $blue-primary;cursor: pointer;
-                    transition: .3s ease;
+                    transition: .3s ease;width: max-content;
                     &:hover{background: $blue-primary;color: white;}
+               }
+               input{
+                    padding: 10px;outline: none;width: 100%;
+                    border: 2px solid #afafaf;font-size: 18px;
+                    border-radius: 8px;transition: .3s ease all;max-width: 350px;
+                    &:focus{border-color: $blue-primary;box-shadow: 0 0 8px 0px $blue-primary;}
                }
           }
      }

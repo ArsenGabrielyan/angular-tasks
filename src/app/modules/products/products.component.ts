@@ -10,7 +10,8 @@ import { HttpService } from './services/http.service';
 })
 export class ProductsComponent implements OnInit,OnDestroy{
   prodList: IProduct[] = [];
-  destroy$ = new Subject<void>()
+  destroy$ = new Subject<void>();
+  searchTerm = "";
   constructor(private httpService: HttpService){}
   ngOnInit(): void {
     this.httpService.showProduct().pipe(map(res=>{

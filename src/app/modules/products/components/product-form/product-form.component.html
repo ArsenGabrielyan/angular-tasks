@@ -42,7 +42,7 @@
                <input type="text" placeholder="e.g. Item" id="unit" formControlName="unit" [ngClass]="{'error': frmProduct.get('unit')?.invalid}">
                <p class="error">{{frmProduct.get("unit")?.errors | validationMsg}}</p>
           </div>
-          <button *ngIf="!id" type="submit">Create</button>
-          <button *ngIf="id" type="submit">Save</button>
+          <button *ngIf="!id" type="submit" [disabled]="frmProduct.invalid">Create</button>
+          <button *ngIf="id" type="submit" [disabled]="frmProduct.invalid">Save</button>
      </form>
 </div>
