@@ -14,7 +14,7 @@ $grey: #9f9f9f; $br: 7px;
      border-radius: $br;background: none;
      outline: none;cursor: pointer;
      transition: .3s ease all;
-     &:disabled{border:2px solid grey;color: grey;cursor: auto;}
+     &:disabled{border:2px solid grey!important;color: grey!important;cursor: auto;}
      &:hover:not(:disabled){background: #22b455!important;color: white!important;span{color: white!important;}}
      span{color: #22b455!important;transition: .3s ease all;}
 }

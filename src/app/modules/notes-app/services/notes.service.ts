@@ -17,11 +17,11 @@ export class NotesService {
     form.reset({title:"",note:""})
   }
   edit(form: FormGroup, notes: INote[], chosen: number){
-    const {newTitle,newNote} = form.value;
-    notes[chosen].title = newTitle;
-    notes[chosen].note = newNote;
+    const {title,note} = form.value;
+    notes[chosen].title = title;
+    notes[chosen].note = note;
     localStorage.setItem('notes',JSON.stringify(notes));
-    form.reset({newTitle: "",newNote: "",});
+    form.reset({title: "",note: "",});
   }
   delete(del: INote[], notes: INote[], i:number){
     del.push(notes[i]);
