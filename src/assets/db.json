@@ -19,16 +19,6 @@
       "available": 2,
       "unit": "item",
       "id": 2
-    },
-    {
-      "name": "aaaa",
-      "desc": "dfgdfgdfg",
-      "onhand": 0,
-      "lowstock": 0,
-      "onorder": 0,
-      "available": 0,
-      "unit": "dfgdfg",
-      "id": 3
     }
   ]
 }
