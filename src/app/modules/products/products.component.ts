@@ -1,5 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map, Subject, takeUntil } from 'rxjs';
 import { IProduct } from 'src/app/interfaces/product';
 import { HttpService } from './services/http.service';
@@ -9,10 +8,11 @@ import { HttpService } from './services/http.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnDestroy{
+export class ProductsComponent implements OnInit,OnDestroy{
   prodList: IProduct[] = [];
   destroy$ = new Subject<void>()
-  constructor(private httpService: HttpService, private router: Router){
+  constructor(private httpService: HttpService){}
+  ngOnInit(): void {
     this.httpService.showProduct().pipe(map(res=>{
       this.prodList = res;
     }),takeUntil(this.destroy$)).subscribe();
@@ -22,6 +22,6 @@ export class ProductsComponent implements OnDestroy{
   }
   deleteProduct(id:number){
     this.httpService.deleteProduct(id).subscribe();
-    this.httpService.showProduct().subscribe();
+    window.location.reload();
   }
 }

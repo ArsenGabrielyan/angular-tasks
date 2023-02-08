@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
 import { ProductFormValidator } from '../../classes/product-form-validator';
 import { HttpService } from '../../services/http.service';
@@ -13,7 +13,7 @@ import { HttpService } from '../../services/http.service';
 export class ProductFormComponent implements OnInit {
   frmProduct!: FormGroup;
   id!: number;
-  constructor(private frmBuild: FormBuilder, private httpService: HttpService, private route: ActivatedRoute){}
+  constructor(private frmBuild: FormBuilder, private httpService: HttpService, private route: ActivatedRoute, private router: Router){}
   ngOnInit(): void {
     this.frmProduct = this.frmBuild.group({
       name: ["", [Validators.required, Validators.minLength(2)]],
@@ -47,5 +47,6 @@ export class ProductFormComponent implements OnInit {
         unit: ""
       });
     }
+    this.router.navigateByUrl("/products")
   }
 }
