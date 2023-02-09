@@ -9,6 +9,7 @@ export class HomepageComponent implements OnInit, DoCheck, AfterContentInit, Aft
   count=0;
   msg="";
   arr: number[] = [];
+  // All React Hooks
   ngOnInit(): void {
     console.log("Initialized");
   }

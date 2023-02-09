@@ -14,6 +14,7 @@ export class TestComponent implements OnChanges{
     console.log(this.arr);
     this.ref.markForCheck();
   }
+  // OnChanges Hook and change Detection
   ngOnChanges(changes: SimpleChanges):void{
     for(let props in changes){
       console.log(changes[props])
