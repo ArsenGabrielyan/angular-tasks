@@ -1,0 +1,13 @@
+.test-center{
+     display: flex;justify-content: center;min-height: 100vh;
+     align-items: center;flex-direction: column;
+     button{
+          border: 2px solid green;padding: 0.5em 1.5em;
+          font-size: 18px;margin: 10px;
+          border-radius: 8px;background: none;
+          color: green;cursor: pointer;
+          transition: .3s ease all;
+          &:hover{background: green;color: white}
+     }
+     input{padding: 1em 2em;margin: 10px;}
+}

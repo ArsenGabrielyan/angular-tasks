@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { AccTypeDirective } from './directive/acc-type.directive';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { FormsModule } from '@angular/forms';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AccTypeDirective,
     NotFoundComponent,
     HomepageComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

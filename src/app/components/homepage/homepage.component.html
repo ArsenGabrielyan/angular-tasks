@@ -1,1 +1,9 @@
-<h2>I'm Doing Tasks</h2>
+<div class="test-center">
+     <h2>I'm Doing Tasks</h2>
+     <p>This is a test btw</p>
+     <input type="text" name="chng" placeholder="try to change :-)" [(ngModel)]="msg">
+     <button (click)="addCount()">Add</button>
+     <button (click)="removeCount()">Remove</button>
+     <button (click)="resetCount()">Reset</button>
+     <app-test [msg]="msg" [arr]="arr"></app-test>
+</div>
