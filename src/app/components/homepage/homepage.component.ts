@@ -1,16 +1,21 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { printSomething } from 'src/app/decorator/decorators';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
-export class HomepageComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
+export class HomepageComponent implements OnInit{
   count=0;
   msg="";
   arr: number[] = [];
-  // All React Hooks
-  ngOnInit(): void {
+  @printSomething public value = "Hello";
+  ngOnInit():void{
+    console.log(this.value)
+  }
+  // All React Hooks (implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy)
+  /*ngOnInit(): void {
     console.log("Initialized");
   }
   ngDoCheck(): void {
@@ -30,7 +35,7 @@ export class HomepageComponent implements OnInit, DoCheck, AfterContentInit, Aft
   }
   ngOnDestroy(): void {
     console.log("Bye bye, HomepageComponent");
-  }
+  }*/
   addCount(){
     this.count++;
     this.arr.push(this.count);
