@@ -12,7 +12,17 @@ export class HomepageComponent implements OnInit{
   arr: number[] = [];
   @printSomething public value = "Hello";
   ngOnInit():void{
-    console.log(this.value)
+  //  fromEvent(document,"click").pipe(timestamp()).subscribe(console.log)
+    // console.log("Before Subbing");
+    // this.obs = new Observable((sub)=>{
+    //   sub.next("Hello");
+    //   sub.next("World");
+    //   sub.complete();
+    // })
+    // this.obs.subscribe((x)=>{
+    //   console.log(x)
+    // })
+    // console.log("After Subbing")
   }
   // All React Hooks (implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy)
   /*ngOnInit(): void {
