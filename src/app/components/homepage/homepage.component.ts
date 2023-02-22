@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngxs/store';
 import { AsyncSubject, BehaviorSubject, combineLatest, concat, filter, forkJoin, from, interval, map, multicast, Observable, reduce, ReplaySubject, Subject } from 'rxjs';
 import { printSomething } from 'src/app/decorator/decorators';
+import { AddAnimal } from 'src/app/store/animals.action';
 
 @Component({
   selector: 'app-homepage',
@@ -74,5 +76,8 @@ export class HomepageComponent implements OnInit{
     subj.next(5);
     subj.complete();
   }
-
+  constructor(private store: Store){}
+  addAnimal(name:string){
+    this.store.dispatch(new AddAnimal(name))
+  }
 }

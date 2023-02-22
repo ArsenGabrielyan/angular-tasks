@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './components/test/test.component';
+import { NgxsModule } from '@ngxs/store';
+import { ZooState } from './store/animals.state';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { TestComponent } from './components/test/test.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxsModule.forRoot([ZooState])
   ],
   providers: [],
   bootstrap: [AppComponent],
