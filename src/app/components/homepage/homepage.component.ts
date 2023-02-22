@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AsyncSubject, BehaviorSubject, combineLatest, concat, filter, forkJoin, from, interval, map, multicast, Observable, reduce, ReplaySubject, Subject } from 'rxjs';
 import { printSomething } from 'src/app/decorator/decorators';
 
 @Component({
@@ -12,7 +13,7 @@ export class HomepageComponent implements OnInit{
   arr: number[] = [];
   @printSomething public value = "Hello";
   ngOnInit():void{
-  //  fromEvent(document,"click").pipe(timestamp()).subscribe(console.log)
+    // fromEvent(document,"click").pipe(timestamp()).subscribe(console.log)
     // console.log("Before Subbing");
     // this.obs = new Observable((sub)=>{
     //   sub.next("Hello");
@@ -45,7 +46,7 @@ export class HomepageComponent implements OnInit{
   }
   ngOnDestroy(): void {
     console.log("Bye bye, HomepageComponent");
-  }*/
+  // }*/
   addCount(){
     this.count++;
     this.arr.push(this.count);
@@ -62,4 +63,16 @@ export class HomepageComponent implements OnInit{
     this.arr.splice(0,this.arr.length-1);
     console.log(this.arr);
   }
+  rxjs1(){
+    const subj = new AsyncSubject();
+    subj.subscribe((v)=>console.log("Observer A:",v));
+    subj.next(1);
+    subj.next(2);
+    subj.next(3);
+    subj.next(4);
+    subj.subscribe((v)=>console.log("Observer B", v));
+    subj.next(5);
+    subj.complete();
+  }
+
 }
