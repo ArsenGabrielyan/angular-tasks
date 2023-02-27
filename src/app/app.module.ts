@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,11 @@ import { FormsModule } from '@angular/forms';
 import { TestComponent } from './components/test/test.component';
 import { NgxsModule } from '@ngxs/store';
 import { ZooState } from './store/animals.state';
+import { RouteHandler } from './store/RouteHandler';
+
+export function noop(){
+  return function(){}
+}
 
 @NgModule({
   declarations: [
@@ -29,7 +34,14 @@ import { ZooState } from './store/animals.state';
     AppRoutingModule,
     NgxsModule.forRoot([ZooState])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: noop,
+      deps: [RouteHandler],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
